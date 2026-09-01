@@ -1,0 +1,50 @@
+{
+  "qInfo": {
+    "qId": "bmChampions",
+    "qType": "bookmark"
+  },
+  "qMetaDef": {
+    "title": "Champions",
+    "description": "Top-tier customers by lifetime value, above the 95th percentile."
+  },
+  "creationDate": "2026-08-27T05:57:34.538Z",
+  "qBookMark": {
+    "qStateData": [
+      {
+        "qStateName": "$",
+        "qFieldItems": [
+          {
+            "qDef": {
+              "qName": "Value Segment",
+              "qType": "PRESENT"
+            },
+            "qSelectInfo": {
+              "qRangeLo": "NaN",
+              "qRangeHi": "NaN",
+              "qNumberFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "qRangeInfo": [],
+              "qContinuousRangeInfo": []
+            },
+            "qValues": [
+              {
+                "qText": "A - Champion",
+                "qNumber": "NaN"
+              }
+            ],
+            "qExcludedValues": [],
+            "qValuesCount": 1,
+            "qExcludedValuesCount": 0
+          }
+        ]
+      }
+    ],
+    "qVariableItems": [],
+    "qPatches": [],
+    "qCyclicGroupStates": [],
+    "qGroupStates": []
+  }
+}

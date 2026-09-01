@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "8e504f8b-14e7-4e19-a56b-0b7948321418",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vCalMax",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "46265",
+  "qIsScriptCreated": true
+}

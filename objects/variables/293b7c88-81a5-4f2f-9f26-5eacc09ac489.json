@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "293b7c88-81a5-4f2f-9f26-5eacc09ac489",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vReloadSeconds",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "320",
+  "qIsScriptCreated": true
+}

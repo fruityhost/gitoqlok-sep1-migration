@@ -1,0 +1,98 @@
+///$tab 06 Transform - Fact
+/*-------------------------------------------------------------------------------------
+  Single-grain fact (one row = one rental transaction), concatenating two sources with
+  an identical field signature:
+     1. real ERP rows        - public.payment -> rental -> inventory
+     2. the volume extension - mig.v_synthetic_sales
+  [Source System] keeps the two streams separable for reconciliation.
+-------------------------------------------------------------------------------------*/
+
+[FactSales]:
+LOAD
+    AutoNumber(TxnId, 'Txn')                                        AS [%TransactionKey],
+    [%FilmKey],
+    [%CustomerKey],
+    [%StoreKey],
+    ApplyMap('MapStaffVersion', DateID & '|' & StaffID, Null())     AS [%StaffVersionKey],
+    DateID                                                          AS [%DateKey],
+    AutoNumber(Date(MonthStart(DateID),'YYYY-MM') & '|' & [%StoreKey] & '|' & CategoryId, 'Budget') AS [%BudgetKey],
+    [Source System],
+    [Payment Method],
+    [Channel],
+    [Rental Days],
+    [Is Late Return],
+    Rentals,
+    [Gross Amount],
+    [Discount Amount],
+    [Net Amount],
+    [Cost Amount],
+    [Net Amount] - [Cost Amount]                                    AS [Margin Amount]
+;
+LOAD
+    'ERP-' & payment_id                                             AS TxnId,
+    ApplyMap('MapInventoryFilm', ApplyMap('MapRentalInventory', rental_id, 0), 1)  AS [%FilmKey],
+    customer_id                                                     AS [%CustomerKey],
+    ApplyMap('MapInventoryStore', ApplyMap('MapRentalInventory', rental_id, 0), 1) AS [%StoreKey],
+    ApplyMap('MapFilmCategoryId',
+        ApplyMap('MapInventoryFilm', ApplyMap('MapRentalInventory', rental_id, 0), 1), 0) AS CategoryId,
+    staff_id                                                        AS StaffID,
+    Num(Floor(PaymentTimestamp))                                    AS DateID,
+    'ERP (PostgreSQL)'                                              AS [Source System],
+    'Card'                                                          AS [Payment Method],
+    'In-Store'                                                      AS [Channel],
+    Alt(Num(ApplyMap('MapRentalDays', rental_id, Null())), 5)        AS [Rental Days],
+    0                                                               AS [Is Late Return],
+    1                                                               AS Rentals,
+    amount                                                          AS [Gross Amount],
+    0                                                               AS [Discount Amount],
+    amount                                                          AS [Net Amount],
+    Round(amount * 0.55, 0.01)                                      AS [Cost Amount]
+RESIDENT [_srcPayment];
+
+DROP TABLES [_srcPayment], [_srcRental];
+
+CONCATENATE ([FactSales])
+LOAD
+    AutoNumber(TxnId, 'Txn')                                        AS [%TransactionKey],
+    [%FilmKey],
+    [%CustomerKey],
+    [%StoreKey],
+    ApplyMap('MapStaffVersion', DateID & '|' & StaffID, Null())     AS [%StaffVersionKey],
+    DateID                                                          AS [%DateKey],
+    AutoNumber(Date(MonthStart(DateID),'YYYY-MM') & '|' & [%StoreKey] & '|' & CategoryId, 'Budget') AS [%BudgetKey],
+    [Source System],
+    [Payment Method],
+    [Channel],
+    [Rental Days],
+    [Is Late Return],
+    Rentals,
+    [Gross Amount],
+    [Discount Amount],
+    [Net Amount],
+    [Cost Amount],
+    [Net Amount] - [Cost Amount]                                    AS [Margin Amount]
+;
+LOAD
+    'PG-' & synthetic_id                                            AS TxnId,
+    film_id                                                         AS [%FilmKey],
+    customer_id                                                     AS [%CustomerKey],
+    store_id                                                        AS [%StoreKey],
+    ApplyMap('MapFilmCategoryId', film_id, 0)                       AS CategoryId,
+    staff_id                                                        AS StaffID,
+    GenDateNum                                                      AS DateID,
+    'Volume Extension'                                              AS [Source System],
+    payment_method                                                  AS [Payment Method],
+    channel                                                         AS [Channel],
+    rental_days                                                     AS [Rental Days],
+    is_late                                                         AS [Is Late Return],
+    1                                                               AS Rentals,
+    list_price                                                      AS [Gross Amount],
+    discount_amount                                                 AS [Discount Amount],
+    net_amount                                                      AS [Net Amount],
+    unit_cost                                                       AS [Cost Amount]
+RESIDENT [_srcVolume];
+
+DROP TABLE [_srcVolume];
+
+LET vFactRows = NoOfRows('FactSales');
+TRACE >>> Total fact rows: $(vFactRows);

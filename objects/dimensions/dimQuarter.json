@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimQuarter",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Year Quarter"
+    ],
+    "qFieldLabels": [
+      "Year Quarter"
+    ],
+    "title": "Year Quarter",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Year Quarter",
+    "description": "Calendar quarter.",
+    "tags": [
+      "Time"
+    ]
+  }
+}

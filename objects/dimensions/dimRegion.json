@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimRegion",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Region"
+    ],
+    "qFieldLabels": [
+      "Region"
+    ],
+    "title": "Region",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Region",
+    "description": "Customer region.",
+    "tags": [
+      "Geography"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "d7d0baec-70d3-4342-a640-0a6bb2a14112",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vColorPrimary",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#1a6fb4",
+  "qIsScriptCreated": true
+}

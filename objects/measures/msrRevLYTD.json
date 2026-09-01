@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrRevLYTD",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Revenue LYTD",
+    "qDef": "Sum({<[Year]={$(=Max([Year])-1)}, [Is YTD]={1}, [Date]=>} [Net Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Revenue LYTD",
+    "description": "SET ANALYSIS - prior year, same period.",
+    "tags": [
+      "Revenue",
+      "Set Analysis"
+    ]
+  }
+}

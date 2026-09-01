@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrRevPerCust",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Revenue per Customer",
+    "qDef": "Sum([Net Amount]) / Count(distinct [Customer ID])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Revenue per Customer",
+    "description": "Net revenue per active customer.",
+    "tags": [
+      "Customer",
+      "Ratio"
+    ]
+  }
+}

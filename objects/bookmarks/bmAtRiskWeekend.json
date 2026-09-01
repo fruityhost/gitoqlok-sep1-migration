@@ -1,0 +1,76 @@
+{
+  "qInfo": {
+    "qId": "bmAtRiskWeekend",
+    "qType": "bookmark"
+  },
+  "qMetaDef": {
+    "title": "At-risk customers, weekend trade",
+    "description": "Two-field selection: lapsed customers, weekend transactions only."
+  },
+  "creationDate": "2026-08-27T05:57:34.707Z",
+  "qBookMark": {
+    "qStateData": [
+      {
+        "qStateName": "$",
+        "qFieldItems": [
+          {
+            "qDef": {
+              "qName": "Day Type",
+              "qType": "PRESENT"
+            },
+            "qSelectInfo": {
+              "qRangeLo": "NaN",
+              "qRangeHi": "NaN",
+              "qNumberFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "qRangeInfo": [],
+              "qContinuousRangeInfo": []
+            },
+            "qValues": [
+              {
+                "qText": "Weekend",
+                "qNumber": "NaN"
+              }
+            ],
+            "qExcludedValues": [],
+            "qValuesCount": 1,
+            "qExcludedValuesCount": 0
+          },
+          {
+            "qDef": {
+              "qName": "Engagement Status",
+              "qType": "PRESENT"
+            },
+            "qSelectInfo": {
+              "qRangeLo": "NaN",
+              "qRangeHi": "NaN",
+              "qNumberFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "qRangeInfo": [],
+              "qContinuousRangeInfo": []
+            },
+            "qValues": [
+              {
+                "qText": "At Risk",
+                "qNumber": "NaN"
+              }
+            ],
+            "qExcludedValues": [],
+            "qValuesCount": 1,
+            "qExcludedValuesCount": 0
+          }
+        ]
+      }
+    ],
+    "qVariableItems": [],
+    "qPatches": [],
+    "qCyclicGroupStates": [],
+    "qGroupStates": []
+  }
+}

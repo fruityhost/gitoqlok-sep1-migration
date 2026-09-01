@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "bf18ce41-e8de-4b07-8e1b-3126ff05fd44",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenBaseRowsPerDay",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "190"
+}

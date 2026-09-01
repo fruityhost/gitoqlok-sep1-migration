@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "e5470c34-d7a5-4b12-a02e-410927d264e4",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vPaymentQvdExists",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "-1"
+}

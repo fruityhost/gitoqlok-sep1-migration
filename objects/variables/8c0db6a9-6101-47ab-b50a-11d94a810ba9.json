@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "8c0db6a9-6101-47ab-b50a-11d94a810ba9",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vForceRebuild",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0"
+}

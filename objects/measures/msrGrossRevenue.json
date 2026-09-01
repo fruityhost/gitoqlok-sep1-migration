@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrGrossRevenue",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Gross Revenue",
+    "qDef": "Sum([Gross Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Gross Revenue",
+    "description": "List value before discounting.",
+    "tags": [
+      "Revenue"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "vTopN",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vTopN",
+  "qComment": "Top-N cut-off for ranked charts.",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "10"
+}

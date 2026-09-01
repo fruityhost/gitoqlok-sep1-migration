@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrCustomers",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Active Customers",
+    "qDef": "Count(distinct [Customer ID])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "I",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Active Customers",
+    "description": "Distinct customers with activity.",
+    "tags": [
+      "Customer"
+    ]
+  }
+}

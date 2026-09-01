@@ -1,0 +1,1048 @@
+[
+  {
+    "qIsHidden": true,
+    "qName": "%ActorKey",
+    "qTags": [
+      "$key",
+      "$hidden",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimActor",
+      "BridgeFilmActor"
+    ]
+  },
+  {
+    "qIsHidden": true,
+    "qName": "%BudgetKey",
+    "qTags": [
+      "$key",
+      "$hidden",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FactSales",
+      "FactBudget"
+    ]
+  },
+  {
+    "qIsHidden": true,
+    "qName": "%CustomerKey",
+    "qTags": [
+      "$key",
+      "$hidden",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FactSales",
+      "DimCustomer"
+    ]
+  },
+  {
+    "qIsHidden": true,
+    "qName": "%DateKey",
+    "qTags": [
+      "$key",
+      "$hidden",
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "FXRates",
+      "FactSales",
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qIsHidden": true,
+    "qName": "%FilmKey",
+    "qTags": [
+      "$key",
+      "$hidden",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimFilm",
+      "BridgeFilmActor",
+      "FactSales"
+    ]
+  },
+  {
+    "qIsHidden": true,
+    "qName": "%StaffVersionKey",
+    "qTags": [
+      "$key",
+      "$hidden",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimStaff",
+      "FactSales"
+    ]
+  },
+  {
+    "qIsHidden": true,
+    "qName": "%StoreKey",
+    "qTags": [
+      "$key",
+      "$hidden",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimStore",
+      "FactSales"
+    ]
+  },
+  {
+    "qIsHidden": true,
+    "qName": "%TransactionKey",
+    "qTags": [
+      "$hidden",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Actor ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimActor"
+    ]
+  },
+  {
+    "qName": "Actor Name",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimActor"
+    ]
+  },
+  {
+    "qName": "Actor Surname",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimActor"
+    ]
+  },
+  {
+    "qName": "Audit Metric",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ReloadAudit"
+    ]
+  },
+  {
+    "qName": "Audit Value",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ReloadAudit"
+    ]
+  },
+  {
+    "qName": "Budget Amount",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FactBudget"
+    ]
+  },
+  {
+    "qName": "Budget Units",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FactBudget"
+    ]
+  },
+  {
+    "qName": "Category",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Category Group",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Channel",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "City",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Cost Amount",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Country",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Currency",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FXRates"
+    ]
+  },
+  {
+    "qName": "Customer Address",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Cohort Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Email",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Last Rental",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Lifetime Rentals",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Lifetime Value",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Name",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Recency Days",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Since",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Customer Surname",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Date",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Day Type",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Day of Month",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Discount Amount",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "District",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Engagement Status",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Film Description",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Film ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Film Title",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Fiscal Quarter",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Fiscal Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Gross Amount",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Home Store ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Is Current Month",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Is Current Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Is Last 12 Months",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Is Late Return",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Is Prior Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Is YTD",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Language",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "List Rental Rate",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Loyalty Tier",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Margin Amount",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Month",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Month Year",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Months Ago",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Net Amount",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Payment Method",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Price Tier",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Quarter",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Rate to USD",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FXRates"
+    ]
+  },
+  {
+    "qName": "Rating",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Rating Description",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Region",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Release Decade",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Release Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Rental Days",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Rentals",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Replacement Cost",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Runtime Band",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Runtime Minutes",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Source Create Date",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Source Release Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Source System",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FactSales"
+    ]
+  },
+  {
+    "qName": "Special Features",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Staff Email",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Staff ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Staff Name",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Staff Role",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Staff Store ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Staff Version",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Standard Rental Days",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimFilm"
+    ]
+  },
+  {
+    "qName": "Store City",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStore"
+    ]
+  },
+  {
+    "qName": "Store Country",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStore"
+    ]
+  },
+  {
+    "qName": "Store ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimStore"
+    ]
+  },
+  {
+    "qName": "Store Manager ID",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DimStore"
+    ]
+  },
+  {
+    "qName": "Store Name",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStore"
+    ]
+  },
+  {
+    "qName": "Store Region",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStore"
+    ]
+  },
+  {
+    "qName": "Target Margin %",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FactBudget"
+    ]
+  },
+  {
+    "qName": "Value Segment",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimCustomer"
+    ]
+  },
+  {
+    "qName": "Version Status",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Version Valid From",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Version Valid To",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "DimStaff"
+    ]
+  },
+  {
+    "qName": "Week",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Weekday",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Year Quarter",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  },
+  {
+    "qName": "Year Week",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "MasterCalendar"
+    ]
+  }
+]

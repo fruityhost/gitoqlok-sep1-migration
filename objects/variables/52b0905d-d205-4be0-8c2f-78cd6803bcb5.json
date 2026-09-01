@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "52b0905d-d205-4be0-8c2f-78cd6803bcb5",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vSetCY",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "{<[Year]={}, [Date]=>}",
+  "qIsScriptCreated": true
+}

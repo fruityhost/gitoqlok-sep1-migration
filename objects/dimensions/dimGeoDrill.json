@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "dimGeoDrill",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "H",
+    "qFieldDefs": [
+      "Region",
+      "Country",
+      "City"
+    ],
+    "qFieldLabels": [
+      "Region",
+      "Country",
+      "City"
+    ],
+    "title": "Geography Drill",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Geography Drill",
+    "description": "Customer geography drill-down.",
+    "tags": [
+      "Geography",
+      "Drill"
+    ]
+  }
+}

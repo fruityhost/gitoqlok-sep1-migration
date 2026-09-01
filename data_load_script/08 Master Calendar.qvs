@@ -1,0 +1,40 @@
+///$tab 08 Master Calendar
+
+[_CalRange]:
+LOAD Min([%DateKey]) AS MinD, Max([%DateKey]) AS MaxD RESIDENT [FactSales];
+LET vCalMin = Num(Peek('MinD',0,'_CalRange'));
+LET vCalMax = Num(Peek('MaxD',0,'_CalRange'));
+DROP TABLE [_CalRange];
+
+LET vCalStart = Num(Floor(YearStart($(vCalMin))));
+LET vCalEnd   = Num(Floor(YearEnd($(vCalMax))));
+LET vCalDays  = $(vCalEnd) - $(vCalStart) + 1;
+LET vMaxYear  = Year($(vCalMax));
+LET vMaxMonth = Num(Month($(vCalMax)));
+
+[MasterCalendar]:
+LOAD
+    [%DateKey],
+    Date([%DateKey])                                                                AS [Date],
+    Year([%DateKey])                                                                AS [Year],
+    Dual('Q' & Ceil(Num(Month([%DateKey]))/3), Ceil(Num(Month([%DateKey]))/3))        AS [Quarter],
+    Year([%DateKey]) & '-Q' & Ceil(Num(Month([%DateKey]))/3)                         AS [Year Quarter],
+    Month([%DateKey])                                                               AS [Month],
+    Dual(Date(MonthStart([%DateKey]),'MMM YYYY'), MonthStart([%DateKey]))            AS [Month Year],
+    Week([%DateKey])                                                                AS [Week],
+    Year([%DateKey]) & '-W' & Num(Week([%DateKey]), '00')                            AS [Year Week],
+    Day([%DateKey])                                                                 AS [Day of Month],
+    WeekDay([%DateKey])                                                             AS [Weekday],
+    If(Num(WeekDay([%DateKey])) >= 5, 'Weekend', 'Weekday')                          AS [Day Type],
+    If(Num(Month([%DateKey])) >= 4, Year([%DateKey]), Year([%DateKey])-1)             AS [Fiscal Year],
+    'FQ' & (Floor(Mod(Num(Month([%DateKey])) - 4 + 12, 12)/3) + 1)                    AS [Fiscal Quarter],
+    If(Year([%DateKey]) = $(vMaxYear), 1, 0)                                         AS [Is Current Year],
+    If(Year([%DateKey]) = $(vMaxYear)-1, 1, 0)                                       AS [Is Prior Year],
+    If(Num(Month([%DateKey])) <= $(vMaxMonth), 1, 0)                                 AS [Is YTD],
+    If([%DateKey] > AddMonths($(vCalMax), -12) and [%DateKey] <= $(vCalMax), 1, 0)    AS [Is Last 12 Months],
+    If(MonthStart([%DateKey]) = MonthStart($(vCalMax)), 1, 0)                         AS [Is Current Month],
+    ($(vMaxYear)*12 + $(vMaxMonth)) - (Year([%DateKey])*12 + Num(Month([%DateKey])))  AS [Months Ago]
+;
+LOAD
+    $(vCalStart) + RecNo() - 1 AS [%DateKey]
+AUTOGENERATE $(vCalDays);

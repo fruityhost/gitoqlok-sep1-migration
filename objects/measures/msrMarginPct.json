@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrMarginPct",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Margin %",
+    "qDef": "Sum([Margin Amount]) / Sum([Net Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 1,
+      "qUseThou": 0,
+      "qFmt": "#,##0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Margin %",
+    "description": "Margin as a share of net revenue.",
+    "tags": [
+      "Profit",
+      "Ratio"
+    ]
+  }
+}

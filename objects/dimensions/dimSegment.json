@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimSegment",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Value Segment"
+    ],
+    "qFieldLabels": [
+      "Value Segment"
+    ],
+    "title": "Value Segment",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Value Segment",
+    "description": "RFM band from spend percentiles.",
+    "tags": [
+      "Customer"
+    ]
+  }
+}

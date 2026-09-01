@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "1ca12341-657d-4d23-ae16-63d944d63245",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vMaxMonth",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "8",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrBudget",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Budget",
+    "qDef": "Sum([Budget Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Budget",
+    "description": "Plan at month x store x category grain.",
+    "tags": [
+      "Budget"
+    ]
+  }
+}

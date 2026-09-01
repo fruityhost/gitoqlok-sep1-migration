@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimFilmTitle",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Film Title"
+    ],
+    "qFieldLabels": [
+      "Film Title"
+    ],
+    "title": "Film Title",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Film Title",
+    "description": "Individual title.",
+    "tags": [
+      "Product"
+    ]
+  }
+}

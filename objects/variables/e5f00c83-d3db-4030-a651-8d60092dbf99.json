@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "e5f00c83-d3db-4030-a651-8d60092dbf99",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "name",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "Sheet1$"
+}

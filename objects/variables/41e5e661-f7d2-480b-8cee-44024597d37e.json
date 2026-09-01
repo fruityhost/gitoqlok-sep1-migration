@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "41e5e661-f7d2-480b-8cee-44024597d37e",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenChurnRate",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0.22"
+}

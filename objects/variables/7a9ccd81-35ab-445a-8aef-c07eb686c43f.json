@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "7a9ccd81-35ab-445a-8aef-c07eb686c43f",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vReportingCurrency",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "USD",
+  "qIsScriptCreated": true
+}

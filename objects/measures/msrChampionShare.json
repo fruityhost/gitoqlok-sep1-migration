@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrChampionShare",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Champion Revenue Share",
+    "qDef": "Sum({<[Value Segment]={'A - Champion'}>} [Net Amount]) / Sum({1} TOTAL [Net Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 1,
+      "qUseThou": 0,
+      "qFmt": "#,##0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Champion Revenue Share",
+    "description": "SET ANALYSIS - revenue share from top-tier customers.",
+    "tags": [
+      "Customer",
+      "Set Analysis"
+    ]
+  }
+}

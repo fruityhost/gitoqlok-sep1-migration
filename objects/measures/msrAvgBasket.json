@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrAvgBasket",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Avg Transaction Value",
+    "qDef": "Sum([Net Amount]) / Sum(Rentals)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Avg Transaction Value",
+    "description": "Net revenue per rental.",
+    "tags": [
+      "Ratio"
+    ]
+  }
+}

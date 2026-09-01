@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimCategory",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Category"
+    ],
+    "qFieldLabels": [
+      "Category"
+    ],
+    "title": "Category",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Category",
+    "description": "Film category.",
+    "tags": [
+      "Product"
+    ]
+  }
+}

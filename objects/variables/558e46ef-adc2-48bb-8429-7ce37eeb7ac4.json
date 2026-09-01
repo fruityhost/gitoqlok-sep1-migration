@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "558e46ef-adc2-48bb-8429-7ce37eeb7ac4",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenRowsProduced",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "491730"
+}

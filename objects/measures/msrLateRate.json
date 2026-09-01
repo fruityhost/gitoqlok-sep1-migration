@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrLateRate",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Late Return Rate",
+    "qDef": "Sum([Is Late Return]) / Sum(Rentals)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 1,
+      "qUseThou": 0,
+      "qFmt": "#,##0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Late Return Rate",
+    "description": "Share of rentals returned late.",
+    "tags": [
+      "Operations",
+      "Ratio"
+    ]
+  }
+}

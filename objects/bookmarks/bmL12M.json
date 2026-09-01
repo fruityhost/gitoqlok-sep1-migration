@@ -1,0 +1,50 @@
+{
+  "qInfo": {
+    "qId": "bmL12M",
+    "qType": "bookmark"
+  },
+  "qMetaDef": {
+    "title": "Rolling 12 months",
+    "description": "Restricts every chart to the trailing twelve-month window."
+  },
+  "creationDate": "2026-08-27T05:57:34.601Z",
+  "qBookMark": {
+    "qStateData": [
+      {
+        "qStateName": "$",
+        "qFieldItems": [
+          {
+            "qDef": {
+              "qName": "Is Last 12 Months",
+              "qType": "PRESENT"
+            },
+            "qSelectInfo": {
+              "qRangeLo": "NaN",
+              "qRangeHi": "NaN",
+              "qNumberFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "qRangeInfo": [],
+              "qContinuousRangeInfo": []
+            },
+            "qValues": [
+              {
+                "qIsNumeric": true,
+                "qNumber": 1
+              }
+            ],
+            "qExcludedValues": [],
+            "qValuesCount": 1,
+            "qExcludedValuesCount": 0
+          }
+        ]
+      }
+    ],
+    "qVariableItems": [],
+    "qPatches": [],
+    "qCyclicGroupStates": [],
+    "qGroupStates": []
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "893bf01d-af90-4251-91a0-3d1564ab8939",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vReloadStartNum",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "46266.730706019",
+  "qIsScriptCreated": true
+}

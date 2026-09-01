@@ -1,0 +1,147 @@
+///$tab 03 Mapping Tables
+
+[MapCategory]:
+MAPPING LOAD category_id, category_name RESIDENT [_srcCategory];
+
+[MapLanguage]:
+MAPPING LOAD language_id, language_name RESIDENT [_srcLanguage];
+
+[MapFilmCategoryId]:
+MAPPING LOAD film_id, category_id RESIDENT [_srcFilmCategory];
+
+[MapAddressCity]:
+MAPPING LOAD address_id, city RESIDENT [_srcGeography];
+
+[MapAddressCountry]:
+MAPPING LOAD address_id, country RESIDENT [_srcGeography];
+
+[MapAddressDistrict]:
+MAPPING LOAD address_id, district RESIDENT [_srcGeography];
+
+[MapAddressLine]:
+MAPPING LOAD address_id, address RESIDENT [_srcGeography];
+
+[MapInventoryFilm]:
+MAPPING LOAD inventory_id, film_id RESIDENT [_srcInventory];
+
+[MapInventoryStore]:
+MAPPING LOAD inventory_id, store_id RESIDENT [_srcInventory];
+
+[MapRentalInventory]:
+MAPPING LOAD rental_id, inventory_id RESIDENT [_srcRental];
+
+[MapRentalDays]:
+MAPPING LOAD rental_id, rental_days RESIDENT [_srcRental];
+
+/* Hand-maintained business hierarchies - reference data that lives in the script,
+   exactly the sort of thing a migration has to account for.                        */
+[MapCategoryGroup]:
+MAPPING LOAD * INLINE [
+category_name, category_group
+Action, Mainstream
+Adventure, Mainstream
+Animation, Family
+Children, Family
+Classics, Catalogue
+Comedy, Mainstream
+Documentary, Catalogue
+Drama, Mainstream
+Family, Family
+Foreign, Catalogue
+Games, Family
+Horror, Genre
+Music, Genre
+New, Mainstream
+Sci-Fi, Genre
+Sports, Genre
+];
+
+[MapRatingDesc]:
+MAPPING LOAD * INLINE [
+rating, rating_description
+G, General Audiences
+PG, Parental Guidance Suggested
+PG-13, Parents Strongly Cautioned
+R, Restricted
+NC-17, Adults Only
+];
+
+[MapRegion]:
+MAPPING LOAD * INLINE [
+country, region
+United States, North America
+Canada, North America
+Mexico, North America
+Brazil, Latin America
+Argentina, Latin America
+Chile, Latin America
+Colombia, Latin America
+Venezuela, Latin America
+Peru, Latin America
+Ecuador, Latin America
+Dominican Republic, Latin America
+Puerto Rico, Latin America
+United Kingdom, Europe
+Germany, Europe
+France, Europe
+Italy, Europe
+Spain, Europe
+Poland, Europe
+Netherlands, Europe
+Sweden, Europe
+Switzerland, Europe
+Austria, Europe
+Ukraine, Europe
+Russian Federation, Europe
+Belarus, Europe
+Bulgaria, Europe
+Czech Republic, Europe
+Hungary, Europe
+Romania, Europe
+Slovakia, Europe
+Greece, Europe
+Latvia, Europe
+Estonia, Europe
+Moldova, Europe
+Turkey, EMEA
+Israel, EMEA
+Saudi Arabia, EMEA
+United Arab Emirates, EMEA
+Egypt, EMEA
+Nigeria, EMEA
+South Africa, EMEA
+Kenya, EMEA
+Morocco, EMEA
+Algeria, EMEA
+Tunisia, EMEA
+Sudan, EMEA
+Tanzania, EMEA
+Zambia, EMEA
+Cameroon, EMEA
+Angola, EMEA
+China, Asia Pacific
+India, Asia Pacific
+Japan, Asia Pacific
+Indonesia, Asia Pacific
+Philippines, Asia Pacific
+Vietnam, Asia Pacific
+Thailand, Asia Pacific
+South Korea, Asia Pacific
+Taiwan, Asia Pacific
+Australia, Asia Pacific
+New Zealand, Asia Pacific
+Pakistan, Asia Pacific
+Bangladesh, Asia Pacific
+Nepal, Asia Pacific
+Sri Lanka, Asia Pacific
+Malaysia, Asia Pacific
+Myanmar, Asia Pacific
+Cambodia, Asia Pacific
+Kazakstan, Asia Pacific
+Azerbaijan, Asia Pacific
+Iran, Asia Pacific
+Iraq, EMEA
+Yemen, EMEA
+Oman, EMEA
+Kuwait, EMEA
+];

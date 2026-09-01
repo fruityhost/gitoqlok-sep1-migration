@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "e981453e-9cb7-43c5-aa30-dc51be1bdf8b",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenYoYGrowth",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0.11"
+}

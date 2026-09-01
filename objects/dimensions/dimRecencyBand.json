@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "dimRecencyBand",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=If([Customer Recency Days] > 365, '4. Lapsed 12m+', If([Customer Recency Days] > 180, '3. Lapsed 6m+', If([Customer Recency Days] > 90, '2. Cooling', '1. Active')))"
+    ],
+    "qFieldLabels": [
+      "Recency Band"
+    ],
+    "title": "Recency Band (calc)",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Recency Band (calc)",
+    "description": "CALCULATED DIMENSION - recency bucket evaluated at chart time.",
+    "tags": [
+      "Customer",
+      "Calculated"
+    ]
+  }
+}

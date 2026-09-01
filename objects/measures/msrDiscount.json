@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrDiscount",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Discounts",
+    "qDef": "Sum([Discount Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Discounts",
+    "description": "Total promotional discount.",
+    "tags": [
+      "Revenue"
+    ]
+  }
+}

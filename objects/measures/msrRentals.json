@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrRentals",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Rentals",
+    "qDef": "Sum(Rentals)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "I",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Rentals",
+    "description": "Transaction count.",
+    "tags": [
+      "Volume"
+    ]
+  }
+}

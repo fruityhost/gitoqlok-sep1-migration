@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "1bc2e6a7-c001-4ad8-8dba-a2829df0b4cd",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vE5",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "5"
+}

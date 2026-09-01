@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "fb1bff78-8ece-46b5-9882-a9371e63a57d",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vQvdPrefixExtract",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "EXT_"
+}

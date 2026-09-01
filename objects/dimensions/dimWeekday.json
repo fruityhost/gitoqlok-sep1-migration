@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimWeekday",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Weekday"
+    ],
+    "qFieldLabels": [
+      "Weekday"
+    ],
+    "title": "Weekday",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Weekday",
+    "description": "Day of week.",
+    "tags": [
+      "Time"
+    ]
+  }
+}

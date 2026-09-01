@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "5c0b7be6-ec14-4f9b-8def-89b63b3a2755",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vCalDays",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2557",
+  "qIsScriptCreated": true
+}

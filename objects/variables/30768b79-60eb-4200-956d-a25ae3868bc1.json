@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "30768b79-60eb-4200-956d-a25ae3868bc1",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vE6",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "6"
+}

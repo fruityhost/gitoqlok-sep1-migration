@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "26afc361-d262-44ed-8be4-0e06efb75316",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenStartDate",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "44197",
+  "qIsScriptCreated": true
+}

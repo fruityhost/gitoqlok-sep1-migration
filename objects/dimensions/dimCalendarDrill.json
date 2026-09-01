@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "dimCalendarDrill",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "H",
+    "qFieldDefs": [
+      "Year",
+      "Quarter",
+      "Month Year",
+      "Date"
+    ],
+    "qFieldLabels": [
+      "Year",
+      "Quarter",
+      "Month",
+      "Date"
+    ],
+    "title": "Calendar Drill",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Calendar Drill",
+    "description": "Year > Quarter > Month > Date drill-down.",
+    "tags": [
+      "Time",
+      "Drill"
+    ]
+  }
+}

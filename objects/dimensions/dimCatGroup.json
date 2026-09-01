@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimCatGroup",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Category Group"
+    ],
+    "qFieldLabels": [
+      "Category Group"
+    ],
+    "title": "Category Group",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Category Group",
+    "description": "Category rollup.",
+    "tags": [
+      "Product"
+    ]
+  }
+}

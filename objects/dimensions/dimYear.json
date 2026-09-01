@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimYear",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Year"
+    ],
+    "qFieldLabels": [
+      "Year"
+    ],
+    "title": "Year",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Year",
+    "description": "Calendar year.",
+    "tags": [
+      "Time"
+    ]
+  }
+}

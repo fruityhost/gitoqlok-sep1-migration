@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "669576ee-fb50-4154-9f88-5e2050a0a4c1",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vErrB",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0"
+}

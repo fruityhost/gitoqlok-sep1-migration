@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "25fbe047-b3bb-4eb1-927d-eb474ac6d578",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vDbConnection",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "PostgreSQL_pg-1459a5f-datanomix-f4c3.a.aivencloud.com (datanomix_qlikservice)",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimLoyalty",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Loyalty Tier"
+    ],
+    "qFieldLabels": [
+      "Loyalty Tier"
+    ],
+    "title": "Loyalty Tier",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Loyalty Tier",
+    "description": "Bronze / Silver / Gold / Platinum.",
+    "tags": [
+      "Customer"
+    ]
+  }
+}

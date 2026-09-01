@@ -1,0 +1,61 @@
+///$tab 00 Main
+/*=====================================================================================
+  APPLICATION : Rental Analytics - Enterprise Reference Model
+  PURPOSE     : Production-shaped Qlik Sense application used as a migration baseline.
+  SOURCE      : PostgreSQL "pagila" (Aiven) - schemas public + mig
+  ARCHITECTURE: Direct extract from Postgres -> transform in memory -> star schema
+
+  PORTABILITY TO SUPERSET
+    Everything this app displays comes from a table or view in Postgres. There is no
+    generated data, no QVD layer, no sampling filter and no scaling expression in this
+    script. Point Superset at the same objects and it returns identical rows with no
+    additional configuration.
+
+      mig.v_synthetic_sales   129,043 rows   the volume extension, pre-sampled
+      mig.v_budget              2,336 rows   plan, pre-scaled to match the sample
+      mig.fx_rates              7,671 rows   EUR / GBP / KZT daily
+      public.payment           16,049 rows   real ERP transactions, never sampled
+      public.film, actor, film_actor, film_category, category, language,
+             address, city, country, customer, staff, store, inventory, rental
+
+    The subset is defined ONCE, in the database, by mig.v_sample_config. To change
+    density, edit subset-views.sql and re-run it. Nothing here or in Superset changes.
+
+  RELOAD PERFORMANCE - roughly 42 seconds
+    The connection matters more than the row count. The original used
+    UseDeclareFetch=1;Fetch=200 - 200 rows per network round trip, ~2,580 trips for
+    516k rows, measured at 300s. PostgreSQL_pagila_bulk uses
+    UseDeclareFetch=0;Fetch=20000 and did the same 516k rows in 78s. Read-only.
+
+  DETERMINISM
+    Rand() appears nowhere. mig.synthetic_sales was built from md5 hashes of stable
+    seeds, so reloads are byte-identical. The only derived values in this script are
+    two documented modulo expressions on DimFilm and DimCustomer, each of which keeps
+    its raw source value alongside.
+
+  DO NOT load ad-hoc spreadsheets into this app. A Sheet1$ table carrying Country and
+  Date columns was added on 28/08 and closed a circular reference, forcing Qlik to mark
+  FactSales as a LOOSE table. Selections then stop propagating. Removed 28/08.
+=====================================================================================*/
+
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;-$#,##0.00';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET FirstWeekDay=0;
+SET BrokenWeeks=0;
+SET ReferenceDay=4;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:µ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+SET ErrorMode=1;
+SET HidePrefix='%';

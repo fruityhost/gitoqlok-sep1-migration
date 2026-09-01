@@ -1,0 +1,16 @@
+///$tab 07 Budget
+/*-------------------------------------------------------------------------------------
+  Budget sits at a different grain to the fact (month x store x category) and links by
+  a composite key, built identically on both sides. mig.v_budget is already scaled to
+  match the sampled fact, so nothing is adjusted here.
+-------------------------------------------------------------------------------------*/
+
+[FactBudget]:
+LOAD
+    AutoNumber(budget_month_txt & '|' & store_id & '|' & category_id, 'Budget') AS [%BudgetKey],
+    budget_amount        AS [Budget Amount],
+    budget_units         AS [Budget Units],
+    target_margin_pct    AS [Target Margin %]
+RESIDENT [_srcBudget];
+
+DROP TABLE [_srcBudget];

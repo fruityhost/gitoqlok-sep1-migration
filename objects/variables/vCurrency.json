@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "vCurrency",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vCurrency",
+  "qComment": "Reporting currency selector. Drives FX conversion.",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "USD"
+}

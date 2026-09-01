@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "7157bb0c-7c54-495e-b110-51567fef9073",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vQvdPrefixStage",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "STG_"
+}

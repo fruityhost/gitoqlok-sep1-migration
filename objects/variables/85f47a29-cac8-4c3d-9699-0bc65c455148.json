@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "85f47a29-cac8-4c3d-9699-0bc65c455148",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vQvdFresh",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "-1"
+}

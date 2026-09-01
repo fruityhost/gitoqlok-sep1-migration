@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "10d797f4-d7fb-4f11-84d1-908b36c2b6cc",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenDays",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2069",
+  "qIsScriptCreated": true
+}

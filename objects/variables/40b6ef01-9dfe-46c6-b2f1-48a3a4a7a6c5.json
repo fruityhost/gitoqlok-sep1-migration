@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "40b6ef01-9dfe-46c6-b2f1-48a3a4a7a6c5",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vReloadStartTxt",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "01/09/2026 17:32:13",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrTitles",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Titles Rented",
+    "qDef": "Count(distinct [Film ID])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "I",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Titles Rented",
+    "description": "Distinct titles with activity.",
+    "tags": [
+      "Product"
+    ]
+  }
+}

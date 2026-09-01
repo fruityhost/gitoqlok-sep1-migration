@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimDecade",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Release Decade"
+    ],
+    "qFieldLabels": [
+      "Release Decade"
+    ],
+    "title": "Release Decade",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Release Decade",
+    "description": "Catalogue vintage.",
+    "tags": [
+      "Product"
+    ]
+  }
+}

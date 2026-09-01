@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrRevL12M",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Revenue Last 12M",
+    "qDef": "Sum({<[Is Last 12 Months]={1}, [Date]=>} [Net Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Revenue Last 12M",
+    "description": "SET ANALYSIS - rolling twelve months.",
+    "tags": [
+      "Revenue",
+      "Set Analysis"
+    ]
+  }
+}

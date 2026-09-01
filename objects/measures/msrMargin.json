@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "msrMargin",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Margin",
+    "qDef": "Sum([Margin Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Margin",
+    "description": "Net less cost.",
+    "tags": [
+      "Profit"
+    ]
+  }
+}

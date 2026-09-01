@@ -1,0 +1,49 @@
+///$tab 09 Customer Segmentation
+/*-------------------------------------------------------------------------------------
+  RFM value banding. Cut-offs come from the ACTUAL spend distribution, so the tiers
+  cannot collapse if the density changes. Superset equivalent: PERCENTILE_CONT over
+  the same aggregate.
+-------------------------------------------------------------------------------------*/
+
+[_CustomerSpend]:
+LOAD
+    [%CustomerKey],
+    Sum([Net Amount])   AS LifetimeSpend,
+    Sum(Rentals)        AS LifetimeRentals,
+    Max([%DateKey])     AS LastRentalDate
+RESIDENT [FactSales]
+GROUP BY [%CustomerKey];
+
+[_Fractiles]:
+LOAD
+    Fractile(LifetimeSpend, 0.50) AS P50,
+    Fractile(LifetimeSpend, 0.80) AS P80,
+    Fractile(LifetimeSpend, 0.95) AS P95
+RESIDENT [_CustomerSpend];
+
+LET vBandP50 = Num(Peek('P50',0,'_Fractiles'));
+LET vBandP80 = Num(Peek('P80',0,'_Fractiles'));
+LET vBandP95 = Num(Peek('P95',0,'_Fractiles'));
+DROP TABLE [_Fractiles];
+TRACE >>> Value band cut-offs: P50=$(vBandP50) P80=$(vBandP80) P95=$(vBandP95);
+
+LEFT JOIN ([DimCustomer])
+LOAD
+    [%CustomerKey],
+    Round(LifetimeSpend, 0.01)                                     AS [Customer Lifetime Value],
+    LifetimeRentals                                                AS [Customer Lifetime Rentals],
+    Date(LastRentalDate)                                           AS [Customer Last Rental],
+    Floor($(vCalMax) - LastRentalDate)                             AS [Customer Recency Days],
+    If(LifetimeSpend > $(vBandP95), 'A - Champion',
+      If(LifetimeSpend > $(vBandP80), 'B - Frequent',
+        If(LifetimeSpend > $(vBandP50), 'C - Regular',
+                                        'D - Occasional')))         AS [Value Segment],
+    If(LifetimeSpend > $(vBandP95), 'Platinum',
+      If(LifetimeSpend > $(vBandP80), 'Gold',
+        If(LifetimeSpend > $(vBandP50), 'Silver',
+                                        'Bronze')))                 AS [Loyalty Tier],
+    If($(vCalMax) - LastRentalDate > 180, 'At Risk',
+       If($(vCalMax) - LastRentalDate > 90, 'Cooling', 'Engaged'))  AS [Engagement Status]
+RESIDENT [_CustomerSpend];
+
+DROP TABLE [_CustomerSpend];

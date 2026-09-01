@@ -1,0 +1,81 @@
+///$tab 04 Transform - Dimensions
+
+[DimFilm]:
+LOAD
+    film_id                                                      AS [%FilmKey],
+    film_id                                                      AS [Film ID],
+    title                                                        AS [Film Title],
+    description                                                  AS [Film Description],
+    /* DETERMINISTIC DERIVATION - pagila stamps release_year = 2006 on all 1,000 titles,
+       leaving no usable time dimension on the catalogue. Superset equivalent:
+           2006 - MOD(film_id * 7, 27)                                                */
+    2006 - Mod(film_id * 7, 27)                                  AS [Release Year],
+    release_year                                                 AS [Source Release Year],
+    ApplyMap('MapLanguage', language_id, 'Unknown')               AS [Language],
+    rental_duration                                              AS [Standard Rental Days],
+    rental_rate                                                  AS [List Rental Rate],
+    replacement_cost                                             AS [Replacement Cost],
+    length                                                       AS [Runtime Minutes],
+    rating                                                       AS [Rating],
+    ApplyMap('MapRatingDesc', rating, 'Not Rated')                AS [Rating Description],
+    special_features                                             AS [Special Features],
+    ApplyMap('MapCategory', ApplyMap('MapFilmCategoryId', film_id, 0), 'Uncategorised') AS [Category],
+    ApplyMap('MapCategoryGroup',
+        ApplyMap('MapCategory', ApplyMap('MapFilmCategoryId', film_id, 0), 'Uncategorised'),
+        'Other')                                                 AS [Category Group],
+    If(length < 60,  '1. Under 60 min',
+      If(length < 90,  '2. 60-90 min',
+        If(length < 120, '3. 90-120 min',
+          If(length < 150, '4. 120-150 min', '5. 150+ min'))))     AS [Runtime Band],
+    If(rental_rate <= 0.99, 'Value',
+      If(rental_rate <= 2.99, 'Standard', 'Premium'))             AS [Price Tier],
+    Dual(Floor((2006 - Mod(film_id * 7, 27))/10)*10 & 's',
+         Floor((2006 - Mod(film_id * 7, 27))/10)*10)              AS [Release Decade]
+RESIDENT [_srcFilm];
+
+[DimActor]:
+LOAD
+    actor_id                                                     AS [%ActorKey],
+    actor_id                                                     AS [Actor ID],
+    Capitalize(first_name) & ' ' & Capitalize(last_name)          AS [Actor Name],
+    Capitalize(last_name)                                         AS [Actor Surname]
+RESIDENT [_srcActor];
+
+// True many-to-many bridge: a film has many actors, an actor appears in many films.
+[BridgeFilmActor]:
+LOAD
+    film_id                                                      AS [%FilmKey],
+    actor_id                                                     AS [%ActorKey]
+RESIDENT [_srcFilmActor];
+
+[DimCustomer]:
+LOAD
+    customer_id                                                  AS [%CustomerKey],
+    customer_id                                                  AS [Customer ID],
+    Capitalize(first_name) & ' ' & Capitalize(last_name)          AS [Customer Name],
+    Capitalize(last_name)                                         AS [Customer Surname],
+    Lower(email)                                                  AS [Customer Email],
+    /* DETERMINISTIC DERIVATION - pagila stamps create_date = 2020-02-14 on every
+       customer. Superset equivalent:
+           create_date - (MOD(customer_id * 13, 1500) * INTERVAL '1 day')             */
+    Date(Date#(create_date_txt,'YYYY-MM-DD') - Mod(customer_id * 13, 1500)) AS [Customer Since],
+    Year(Date#(create_date_txt,'YYYY-MM-DD') - Mod(customer_id * 13, 1500)) AS [Customer Cohort Year],
+    Date(Date#(create_date_txt,'YYYY-MM-DD'))                     AS [Source Create Date],
+    store_id                                                      AS [Home Store ID],
+    ApplyMap('MapAddressLine',     address_id, 'Unknown')         AS [Customer Address],
+    ApplyMap('MapAddressCity',     address_id, 'Unknown')         AS [City],
+    ApplyMap('MapAddressDistrict', address_id, 'Unknown')         AS [District],
+    ApplyMap('MapAddressCountry',  address_id, 'Unknown')         AS [Country],
+    ApplyMap('MapRegion', ApplyMap('MapAddressCountry', address_id, 'Unknown'), 'Rest of World') AS [Region]
+RESIDENT [_srcCustomer];
+
+[DimStore]:
+LOAD
+    store_id                                                     AS [%StoreKey],
+    store_id                                                     AS [Store ID],
+    'Store ' & store_id & ' - ' & ApplyMap('MapAddressCity', address_id, 'Unknown') AS [Store Name],
+    ApplyMap('MapAddressCity',    address_id, 'Unknown')          AS [Store City],
+    ApplyMap('MapAddressCountry', address_id, 'Unknown')          AS [Store Country],
+    ApplyMap('MapRegion', ApplyMap('MapAddressCountry', address_id, 'Unknown'), 'Rest of World') AS [Store Region],
+    manager_staff_id                                              AS [Store Manager ID]
+RESIDENT [_srcStore];

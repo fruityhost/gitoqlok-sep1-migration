@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "034ece1f-aebd-42b6-abcd-4c9ff908bfd4",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenCustomerSkew",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2.4"
+}

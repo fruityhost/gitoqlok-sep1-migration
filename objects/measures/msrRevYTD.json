@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrRevYTD",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Revenue YTD",
+    "qDef": "Sum({<[Year]={$(=Max([Year]))}, [Is YTD]={1}, [Date]=>} [Net Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Revenue YTD",
+    "description": "SET ANALYSIS - current year to latest loaded month.",
+    "tags": [
+      "Revenue",
+      "Set Analysis"
+    ]
+  }
+}

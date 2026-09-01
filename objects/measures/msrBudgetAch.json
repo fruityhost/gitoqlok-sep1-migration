@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrBudgetAch",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Budget Achievement %",
+    "qDef": "Sum([Net Amount]) / Sum([Budget Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 1,
+      "qUseThou": 0,
+      "qFmt": "#,##0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "Budget Achievement %",
+    "description": "Actual against plan.",
+    "tags": [
+      "Budget",
+      "Ratio"
+    ]
+  }
+}

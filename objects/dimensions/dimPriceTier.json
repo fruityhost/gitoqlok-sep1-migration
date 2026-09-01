@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimPriceTier",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Price Tier"
+    ],
+    "qFieldLabels": [
+      "Price Tier"
+    ],
+    "title": "Price Tier",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Price Tier",
+    "description": "Value / Standard / Premium.",
+    "tags": [
+      "Product"
+    ]
+  }
+}

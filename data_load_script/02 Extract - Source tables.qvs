@@ -1,0 +1,134 @@
+///$tab 02 Extract - Source tables
+/*-------------------------------------------------------------------------------------
+  Each source object is read from Postgres exactly once into a temporary _src table.
+  Mapping tables and dimensions are built RESIDENT off these, so nothing is queried
+  twice over the wire. The _src tables are dropped as soon as they are consumed.
+
+  Every statement here is a plain SELECT with no WHERE clause. That is deliberate: the
+  SQL is meant to be transplantable to Superset verbatim.
+-------------------------------------------------------------------------------------*/
+
+LIB CONNECT TO [$(vDbConnection)];
+
+[_srcFilm]:
+LOAD *;
+SELECT film_id, title, description, release_year, language_id,
+       rental_duration, rental_rate::float8 AS rental_rate, length,
+       replacement_cost::float8 AS replacement_cost, rating::text AS rating,
+       array_to_string(special_features, ', ') AS special_features
+FROM film;
+
+[_srcActor]:
+LOAD *;
+SELECT actor_id, first_name, last_name FROM actor;
+
+[_srcFilmActor]:
+LOAD *;
+SELECT film_id, actor_id FROM film_actor;
+
+[_srcFilmCategory]:
+LOAD *;
+SELECT film_id, category_id FROM film_category;
+
+[_srcCategory]:
+LOAD *;
+SELECT category_id, name AS category_name FROM category;
+
+[_srcLanguage]:
+LOAD *;
+SELECT language_id, trim(name) AS language_name FROM language;
+
+[_srcGeography]:
+LOAD *;
+SELECT a.address_id, a.address, a.district, a.postal_code, a.phone,
+       c.city_id, c.city, co.country_id, co.country
+FROM address a
+JOIN city c     ON c.city_id     = a.city_id
+JOIN country co ON co.country_id = c.country_id;
+
+[_srcCustomer]:
+LOAD *;
+SELECT customer_id, store_id, first_name, last_name, email, address_id,
+       activebool::int AS activebool,
+       to_char(create_date,'YYYY-MM-DD') AS create_date_txt
+FROM customer;
+
+[_srcStaff]:
+LOAD *;
+SELECT staff_id, first_name, last_name, email, store_id, address_id,
+       active::int AS active, username
+FROM staff;
+
+[_srcStore]:
+LOAD *;
+SELECT store_id, manager_staff_id, address_id FROM store;
+
+[_srcInventory]:
+LOAD *;
+SELECT inventory_id, film_id, store_id FROM inventory;
+
+[_srcRental]:
+LOAD
+    rental_id,
+    inventory_id,
+    Round(Timestamp#(return_date_txt,'YYYY-MM-DD hh:mm:ss')
+        - Timestamp#(rental_date_txt,'YYYY-MM-DD hh:mm:ss')) AS rental_days;
+SELECT rental_id, inventory_id,
+       to_char(rental_date,'YYYY-MM-DD HH24:MI:SS') AS rental_date_txt,
+       to_char(return_date,'YYYY-MM-DD HH24:MI:SS') AS return_date_txt
+FROM rental;
+
+/* Real ERP transactions, taken in full. The incremental high-water-mark pattern is not
+   possible without a QVD to persist the watermark and the prior history.            */
+[_srcPayment]:
+LOAD
+    payment_id, customer_id, staff_id, rental_id, amount,
+    Timestamp#(payment_date_txt,'YYYY-MM-DD hh:mm:ss') AS PaymentTimestamp;
+SELECT payment_id, customer_id, staff_id, rental_id, amount::float8 AS amount,
+       to_char(payment_date,'YYYY-MM-DD HH24:MI:SS') AS payment_date_txt
+FROM payment;
+
+LET vErpRows = NoOfRows('_srcPayment');
+TRACE >>> ERP payment rows: $(vErpRows);
+
+/* The volume extension. The view already contains the subset - no filter here. */
+[_srcVolume]:
+LOAD
+    Num(Date#(gen_date_txt,'YYYY-MM-DD')) AS GenDateNum,
+    synthetic_id, film_id, store_id, customer_id, staff_id,
+    rental_days, list_price, discount_amount, net_amount, unit_cost,
+    payment_method, channel, is_late;
+SELECT to_char(gen_date,'YYYY-MM-DD') AS gen_date_txt,
+       synthetic_id, film_id, store_id, customer_id, staff_id,
+       rental_days,
+       list_price::float8      AS list_price,
+       discount_amount::float8 AS discount_amount,
+       net_amount::float8      AS net_amount,
+       unit_cost::float8       AS unit_cost,
+       payment_method, channel, is_late
+FROM mig.v_synthetic_sales;
+
+LET vVolRows = NoOfRows('_srcVolume');
+TRACE >>> Volume extension rows: $(vVolRows);
+
+/* Plan figures. The view is already scaled to match the sampled fact - no scaling here. */
+[_srcBudget]:
+LOAD budget_month_txt, store_id, category_id,
+     budget_amount, budget_units, target_margin_pct;
+SELECT to_char(budget_month,'YYYY-MM') AS budget_month_txt,
+       store_id, category_id,
+       budget_amount::float8     AS budget_amount,
+       budget_units::float8      AS budget_units,
+       target_margin_pct::float8 AS target_margin_pct
+FROM mig.v_budget;
+
+[FXRates]:
+LOAD
+    Num(Date#(rate_date_txt,'YYYY-MM-DD')) AS [%DateKey],
+    currency                               AS [Currency],
+    rate_to_usd                            AS [Rate to USD];
+SELECT to_char(rate_date,'YYYY-MM-DD') AS rate_date_txt,
+       currency, rate_to_usd::float8 AS rate_to_usd
+FROM mig.fx_rates;
+
+DISCONNECT;

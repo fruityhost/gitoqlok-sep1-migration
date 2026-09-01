@@ -1,0 +1,16 @@
+///$tab 11 Section Access (disabled)
+/*-------------------------------------------------------------------------------------
+  DELIBERATELY DISABLED. Enabling this locks out any account not listed below.
+
+SECTION ACCESS;
+
+[AccessTable]:
+LOAD * INLINE [
+ACCESS,  USERID,                     %REDUCTION_STORE,  OMIT
+ADMIN,   DATANOMIX\qlikservice,      *,
+USER,    DATANOMIX\store1.manager,   1,                 Customer Email
+USER,    DATANOMIX\store2.manager,   2,                 Customer Email
+];
+
+SECTION APPLICATION;
+-------------------------------------------------------------------------------------*/

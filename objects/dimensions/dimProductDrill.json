@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "dimProductDrill",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "H",
+    "qFieldDefs": [
+      "Category Group",
+      "Category",
+      "Film Title"
+    ],
+    "qFieldLabels": [
+      "Category Group",
+      "Category",
+      "Film Title"
+    ],
+    "title": "Product Drill",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Product Drill",
+    "description": "Category Group > Category > Title drill-down.",
+    "tags": [
+      "Product",
+      "Drill"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "cda35a6e-7455-4fe6-b9a7-9c32d8f6f517",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vQvdMaxAgeHours",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "12"
+}

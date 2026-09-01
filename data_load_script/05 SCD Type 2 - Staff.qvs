@@ -1,0 +1,70 @@
+///$tab 05 SCD Type 2 - Staff
+/*-------------------------------------------------------------------------------------
+  Type 2 slowly changing dimension. The source holds only the current row, so version
+  boundaries are fixed offsets from the window start - deterministic, no Rand().
+  IntervalMatch resolves the effective version per (date, staff); the result collapses
+  into a mapping table so no synthetic keys survive into the published model.
+-------------------------------------------------------------------------------------*/
+
+[DimStaff]:
+LOAD
+    AutoNumber(staff_id & '|' & VersionNo, 'StaffVersion')        AS [%StaffVersionKey],
+    staff_id                                                      AS [Staff ID],
+    staff_name                                                    AS [Staff Name],
+    email                                                         AS [Staff Email],
+    VersionNo                                                     AS [Staff Version],
+    StaffRole                                                     AS [Staff Role],
+    AssignedStore                                                 AS [Staff Store ID],
+    Date(ValidFrom)                                               AS [Version Valid From],
+    Date(ValidTo)                                                 AS [Version Valid To],
+    If(ValidTo >= $(vGenEndDate), 'Current', 'Historic')           AS [Version Status]
+;
+LOAD
+    staff_id,
+    Capitalize(first_name) & ' ' & Capitalize(last_name)                           AS staff_name,
+    email,
+    IterNo()                                                                       AS VersionNo,
+    Pick(IterNo(), 'Sales Assistant', 'Senior Assistant', 'Store Supervisor')       AS StaffRole,
+    If(IterNo() = 1, 3 - store_id, store_id)                                        AS AssignedStore,
+    If(IterNo() = 1, $(vGenStartDate) - 500,
+       If(IterNo() = 2, $(vGenStartDate) + 430, $(vGenStartDate) + 1180))           AS ValidFrom,
+    If(IterNo() = 1, $(vGenStartDate) + 429,
+       If(IterNo() = 2, $(vGenStartDate) + 1179, $(vGenEndDate) + 3650))            AS ValidTo
+RESIDENT [_srcStaff]
+WHILE IterNo() <= 3;
+
+[_StaffSpan]:
+LOAD
+    [%StaffVersionKey],
+    [Staff ID]                                            AS StaffIdIv,
+    Num([Version Valid From])                             AS VF,
+    Num([Version Valid To])                               AS VT
+RESIDENT [DimStaff];
+
+[_StaffDates]:
+LOAD
+    $(vGenStartDate) - 600 + RecNo() - 1 AS EffDate
+AUTOGENERATE $(vGenDays) + 700;
+
+JOIN ([_StaffDates])
+LOAD DISTINCT StaffIdIv RESIDENT [_StaffSpan];
+
+[_StaffResolved]:
+INTERVALMATCH (EffDate, StaffIdIv)
+LOAD VF, VT, StaffIdIv RESIDENT [_StaffSpan];
+
+LEFT JOIN ([_StaffResolved])
+LOAD VF, VT, StaffIdIv, [%StaffVersionKey] RESIDENT [_StaffSpan];
+
+[MapStaffVersion]:
+MAPPING LOAD
+    EffDate & '|' & StaffIdIv AS _k,
+    [%StaffVersionKey]        AS _v
+RESIDENT [_StaffResolved];
+
+DROP TABLES [_StaffSpan], [_StaffDates], [_StaffResolved];
+
+// Source tables no longer needed - everything downstream is RESIDENT or mapped.
+DROP TABLES [_srcFilm], [_srcActor], [_srcFilmActor], [_srcFilmCategory],
+            [_srcCategory], [_srcLanguage], [_srcGeography], [_srcCustomer],
+            [_srcStaff], [_srcStore], [_srcInventory];

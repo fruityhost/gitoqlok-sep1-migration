@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "a7060556-37f9-48f0-a5dc-17b648706036",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vTargetMarginPct",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0.42",
+  "qIsScriptCreated": true
+}

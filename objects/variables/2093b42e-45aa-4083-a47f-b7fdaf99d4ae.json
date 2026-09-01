@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "2093b42e-45aa-4083-a47f-b7fdaf99d4ae",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vE4",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "4"
+}

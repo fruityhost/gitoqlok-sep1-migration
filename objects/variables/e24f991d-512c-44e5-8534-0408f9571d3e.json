@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "e24f991d-512c-44e5-8534-0408f9571d3e",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vFactRows",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "532223",
+  "qIsScriptCreated": true
+}

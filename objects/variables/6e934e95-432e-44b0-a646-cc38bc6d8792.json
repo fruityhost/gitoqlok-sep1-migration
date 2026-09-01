@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "6e934e95-432e-44b0-a646-cc38bc6d8792",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vCalMin",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "43854",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimSource",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Source System"
+    ],
+    "qFieldLabels": [
+      "Source System"
+    ],
+    "title": "Source System",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Source System",
+    "description": "ERP extract vs generated volume.",
+    "tags": [
+      "Lineage"
+    ]
+  }
+}

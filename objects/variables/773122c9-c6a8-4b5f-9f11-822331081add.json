@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "773122c9-c6a8-4b5f-9f11-822331081add",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vReloadEndNum",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "46266.734409722",
+  "qIsScriptCreated": true
+}

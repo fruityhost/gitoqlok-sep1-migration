@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimStore",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Store Name"
+    ],
+    "qFieldLabels": [
+      "Store"
+    ],
+    "title": "Store",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Store",
+    "description": "Rental store.",
+    "tags": [
+      "Org"
+    ]
+  }
+}

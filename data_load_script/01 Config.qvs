@@ -1,0 +1,27 @@
+///$tab 01 Config
+
+SET vDbConnection = 'PostgreSQL_pagila_bulk';
+
+// Window covered by the volume extension. Must match mig._params in Postgres.
+LET  vGenStartDate = Num(MakeDate(2021,1,1));
+LET  vGenEndDate   = Num(MakeDate(2026,8,31));
+LET  vGenDays      = $(vGenEndDate) - $(vGenStartDate) + 1;
+
+SET vReportingCurrency   = 'USD';
+SET vTargetMarginPct     = 0.42;
+SET vLateReturnGraceDays = 1;
+
+SET vSetCY   = {<[Year]={$(=Max([Year]))}, [Date]=>};
+SET vSetLY   = {<[Year]={$(=Max([Year])-1)}, [Date]=>};
+SET vSetYTD  = {<[Year]={$(=Max([Year]))}, [Is YTD]={1}, [Date]=>};
+SET vSetLYTD = {<[Year]={$(=Max([Year])-1)}, [Is YTD]={1}, [Date]=>};
+
+SET vColorPrimary   = '#1a6fb4';
+SET vColorSecondary = '#f2a341';
+SET vColorPositive  = '#2e8b57';
+SET vColorNegative  = '#c0392b';
+SET vColorNeutral   = '#8d9aa5';
+
+LET vReloadStartNum = Num(Now(1));
+LET vReloadStartTxt = Timestamp(Now(1));
+TRACE >>> Reload started at $(vReloadStartTxt);

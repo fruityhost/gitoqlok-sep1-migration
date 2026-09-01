@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrErpRevenue",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ERP Revenue (reconciliation)",
+    "qDef": "Sum({<[Source System]={'ERP (PostgreSQL)'}>} [Net Amount])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "M",
+      "qnDec": 0,
+      "qUseThou": 1,
+      "qFmt": "$#,##0;-$#,##0",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "ERP Revenue (reconciliation)",
+    "description": "SET ANALYSIS - real Postgres extract only.",
+    "tags": [
+      "Lineage",
+      "Set Analysis"
+    ]
+  }
+}

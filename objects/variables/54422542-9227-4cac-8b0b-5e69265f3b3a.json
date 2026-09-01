@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "54422542-9227-4cac-8b0b-5e69265f3b3a",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vReloadEndTxt",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "01/09/2026 17:37:33",
+  "qIsScriptCreated": true
+}

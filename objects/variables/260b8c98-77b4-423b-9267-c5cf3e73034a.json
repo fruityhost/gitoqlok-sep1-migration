@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "260b8c98-77b4-423b-9267-c5cf3e73034a",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vQvdFile",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "lib://MigrationTest_QVD/EXT_fx_rates.qvd"
+}

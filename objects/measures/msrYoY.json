@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "msrYoY",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "YoY Growth %",
+    "qDef": "(Sum({<[Year]={$(=Max([Year]))}, [Is YTD]={1}, [Date]=>} [Net Amount]) / Sum({<[Year]={$(=Max([Year])-1)}, [Is YTD]={1}, [Date]=>} [Net Amount])) - 1",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 1,
+      "qUseThou": 0,
+      "qFmt": "#,##0.0%",
+      "qDec": ".",
+      "qThou": ","
+    },
+    "numFormatFromTemplate": false
+  },
+  "qMetaDef": {
+    "title": "YoY Growth %",
+    "description": "SET ANALYSIS - YTD vs LYTD.",
+    "tags": [
+      "Revenue",
+      "Set Analysis"
+    ]
+  }
+}

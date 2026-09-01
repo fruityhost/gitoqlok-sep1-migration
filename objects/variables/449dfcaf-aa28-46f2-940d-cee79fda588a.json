@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "449dfcaf-aa28-46f2-940d-cee79fda588a",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vErpRows",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "16049",
+  "qIsScriptCreated": true
+}

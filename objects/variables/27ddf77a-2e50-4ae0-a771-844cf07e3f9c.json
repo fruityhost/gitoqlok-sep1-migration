@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "27ddf77a-2e50-4ae0-a771-844cf07e3f9c",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vBandP80",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "3177.8859999999",
+  "qIsScriptCreated": true
+}

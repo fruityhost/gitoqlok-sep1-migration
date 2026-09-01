@@ -1,0 +1,40 @@
+///$tab 10 Finalize
+
+TAG FIELDS [%FilmKey], [%CustomerKey], [%StoreKey], [%ActorKey], [%DateKey],
+           [%StaffVersionKey], [%BudgetKey], [%TransactionKey] WITH '$hidden';
+
+COMMENT TABLE [FactSales]       WITH 'Transaction-grain fact. public.payment plus the volume extension from mig.v_synthetic_sales.';
+COMMENT TABLE [FactBudget]      WITH 'Plan from mig.v_budget, month x store x category, linked via composite %BudgetKey.';
+COMMENT TABLE [DimFilm]         WITH 'Film master including category, price tier and runtime banding.';
+COMMENT TABLE [DimCustomer]     WITH 'Customer master enriched with RFM value segmentation.';
+COMMENT TABLE [DimStaff]        WITH 'Type 2 slowly changing dimension - one row per staff version.';
+COMMENT TABLE [DimStore]        WITH 'Store master with geography rollup.';
+COMMENT TABLE [DimActor]        WITH 'Actor master, associated to films through BridgeFilmActor.';
+COMMENT TABLE [BridgeFilmActor] WITH 'Many-to-many bridge between films and actors.';
+COMMENT TABLE [MasterCalendar]  WITH 'Canonical date dimension with fiscal calendar and relative-period flags.';
+COMMENT TABLE [FXRates]         WITH 'Daily FX rates from mig.fx_rates.';
+
+COMMENT FIELD [Net Amount]               WITH 'Revenue net of discounts, inclusive of late fees. Base currency USD.';
+COMMENT FIELD [Margin Amount]            WITH 'Net Amount less Cost Amount.';
+COMMENT FIELD [Is YTD]                   WITH 'Flag = 1 when the date falls on or before the latest loaded month, in any year.';
+COMMENT FIELD [Value Segment]            WITH 'RFM value band derived at load time from spend percentiles (P50 / P80 / P95).';
+COMMENT FIELD [Source System]            WITH 'ERP (PostgreSQL) = public.payment. Volume Extension = mig.v_synthetic_sales.';
+COMMENT FIELD [Customer Lifetime Value]  WITH 'Sum of Net Amount across all loaded periods.';
+COMMENT FIELD [Staff Version]            WITH 'SCD2 version number. Use Version Status = Current for the live org structure.';
+COMMENT FIELD [Release Year]             WITH 'Deterministic derivation: 2006 - MOD(film_id*7,27). Raw value in Source Release Year.';
+COMMENT FIELD [Customer Since]           WITH 'Deterministic derivation: create_date - MOD(customer_id*13,1500) days. Raw value in Source Create Date.';
+
+LET vReloadEndNum  = Num(Now(1));
+LET vReloadEndTxt  = Timestamp(Now(1));
+LET vReloadSeconds = Round(($(vReloadEndNum) - $(vReloadStartNum)) * 86400, 1);
+
+[ReloadAudit]:
+LOAD 'Reload finished'    AS [Audit Metric], '$(vReloadEndTxt)'   AS [Audit Value] AUTOGENERATE 1;
+CONCATENATE ([ReloadAudit]) LOAD 'Duration (seconds)' AS [Audit Metric], '$(vReloadSeconds)' AS [Audit Value] AUTOGENERATE 1;
+CONCATENATE ([ReloadAudit]) LOAD 'Fact rows'          AS [Audit Metric], '$(vFactRows)'      AS [Audit Value] AUTOGENERATE 1;
+CONCATENATE ([ReloadAudit]) LOAD 'ERP rows'           AS [Audit Metric], '$(vErpRows)'       AS [Audit Value] AUTOGENERATE 1;
+CONCATENATE ([ReloadAudit]) LOAD 'Volume rows'        AS [Audit Metric], '$(vVolRows)'       AS [Audit Value] AUTOGENERATE 1;
+CONCATENATE ([ReloadAudit]) LOAD 'Calendar from'      AS [Audit Metric], Date($(vCalStart))  AS [Audit Value] AUTOGENERATE 1;
+CONCATENATE ([ReloadAudit]) LOAD 'Calendar to'        AS [Audit Metric], Date($(vCalEnd))    AS [Audit Value] AUTOGENERATE 1;
+
+TRACE >>> Reload complete in $(vReloadSeconds) seconds. Fact rows: $(vFactRows);

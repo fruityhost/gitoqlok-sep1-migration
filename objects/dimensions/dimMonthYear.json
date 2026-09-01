@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimMonthYear",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Month Year"
+    ],
+    "qFieldLabels": [
+      "Month"
+    ],
+    "title": "Month",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Month",
+    "description": "Calendar month.",
+    "tags": [
+      "Time"
+    ]
+  }
+}

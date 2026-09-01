@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "2eb0dae6-e4b3-48f5-8010-192707063089",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vSetLY",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "{<[Year]={}, [Date]=>}",
+  "qIsScriptCreated": true
+}

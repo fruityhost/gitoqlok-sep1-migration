@@ -1,0 +1,50 @@
+{
+  "qInfo": {
+    "qId": "bmErpOnly",
+    "qType": "bookmark"
+  },
+  "qMetaDef": {
+    "title": "Reconciliation - ERP rows only",
+    "description": "Isolates the real Postgres extract for reconciliation against the source system."
+  },
+  "creationDate": "2026-08-27T05:57:34.479Z",
+  "qBookMark": {
+    "qStateData": [
+      {
+        "qStateName": "$",
+        "qFieldItems": [
+          {
+            "qDef": {
+              "qName": "Source System",
+              "qType": "PRESENT"
+            },
+            "qSelectInfo": {
+              "qRangeLo": "NaN",
+              "qRangeHi": "NaN",
+              "qNumberFormat": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+              },
+              "qRangeInfo": [],
+              "qContinuousRangeInfo": []
+            },
+            "qValues": [
+              {
+                "qText": "ERP (PostgreSQL)",
+                "qNumber": "NaN"
+              }
+            ],
+            "qExcludedValues": [],
+            "qValuesCount": 1,
+            "qExcludedValuesCount": 0
+          }
+        ]
+      }
+    ],
+    "qVariableItems": [],
+    "qPatches": [],
+    "qCyclicGroupStates": [],
+    "qGroupStates": []
+  }
+}

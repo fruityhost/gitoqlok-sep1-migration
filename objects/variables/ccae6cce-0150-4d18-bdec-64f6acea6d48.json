@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "ccae6cce-0150-4d18-bdec-64f6acea6d48",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vVolRows",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "516174",
+  "qIsScriptCreated": true
+}

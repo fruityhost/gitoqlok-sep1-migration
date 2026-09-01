@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "0358f497-ec00-44f5-a50a-88338e5f6f1e",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vQvdPath",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "lib://MigrationTest_QVD/"
+}

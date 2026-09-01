@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "13affb10-0b58-460a-a31c-e36b63028cfa",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vSetYTD",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "{<[Year]={}, [Is YTD]={1}, [Date]=>}",
+  "qIsScriptCreated": true
+}

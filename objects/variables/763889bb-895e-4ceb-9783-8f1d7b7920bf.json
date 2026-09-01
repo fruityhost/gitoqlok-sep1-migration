@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "763889bb-895e-4ceb-9783-8f1d7b7920bf",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vGenTitleSkew",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "1.7"
+}

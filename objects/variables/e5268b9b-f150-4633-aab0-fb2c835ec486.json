@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "e5268b9b-f150-4633-aab0-fb2c835ec486",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vPaymentWatermark",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2020-05-14 12:44:29"
+}

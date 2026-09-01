@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "dimStaffRole",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "Staff Role"
+    ],
+    "qFieldLabels": [
+      "Staff Role"
+    ],
+    "title": "Staff Role",
+    "coloring": {
+      "changeHash": "",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "Staff Role",
+    "description": "SCD2 staff role.",
+    "tags": [
+      "Org"
+    ]
+  }
+}

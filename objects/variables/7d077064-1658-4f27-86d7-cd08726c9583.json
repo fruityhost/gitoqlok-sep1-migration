@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "7d077064-1658-4f27-86d7-cd08726c9583",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vIncrementalRows",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "182"
+}

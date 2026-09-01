@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "vFXRate",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vFXRate",
+  "qComment": "Resolves the rate for the selected currency.",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "If('$(vCurrency)'='USD', 1, Only({<Currency={'$(vCurrency)'}>} [Rate to USD]))"
+}
